@@ -9,7 +9,7 @@ Agora é hora de praticar com foco e disciplina. Faça com calma, teste bastante
 
 **Boa sorte e bom treino!**
 
-## 🎯 Objetivos gerais
+## Objetivos gerais
 
 - Treinar raciocínio lógico com problemas progressivos.
 - Aprender a trabalhar com entrada, saída e variáveis.
@@ -26,7 +26,7 @@ Nesta etapa, você vai praticar os fundamentos: criar variáveis, receber dados 
 2. Peça ao usuário que informe o nome e exiba a mensagem: `Olá, [NomeDoUsuario]`.
 3. Peça ao usuário nome e idade e exiba: `Olá, [NomeDoUsuario], sua idade é [idade]`.
 
-### 🔥 Desafios extras (opcionais)
+### Desafios extras (opcionais)
 
 - Exiba o nome também em letras maiúsculas.
 - Mostre quantos caracteres o nome digitado possui.
@@ -52,7 +52,7 @@ Nesta etapa, você vai ensinar o programa a tomar decisões com base em regras.
 	- caso contrário, exiba `Tente novamente`.
 9. Leia o ano de nascimento e informe se a pessoa pode votar no ano atual (sem considerar o mês).
 
-### 🔥 Desafios extras (opcionais)
+### Desafios extras (opcionais)
 
 - Em exercícios de "maior número", também mostre o menor.
 - Trate entradas inválidas (por exemplo, texto no lugar de número).
@@ -75,7 +75,7 @@ Nesta etapa, você vai repetir tarefas de forma inteligente com `for` e `while`.
 9. Imprima os 10 primeiros números inteiros maiores que 100.
 10. Leia 10 valores e informe quantos estão no intervalo de 24 a 42 (inclusive) e quantos estão fora.
 
-### 🔥 Desafios extras (opcionais)
+### Desafios extras (opcionais)
 
 - Permita ao usuário escolher o valor inicial da contagem regressiva.
 - Ao calcular médias, exiba também soma total e quantidade de valores.
@@ -83,7 +83,7 @@ Nesta etapa, você vai repetir tarefas de forma inteligente com `for` e `while`.
 
 ---
 
-## 🏁 Desafio Final (opcional)
+## Desafio Final (opcional)
 
 Crie um programa com menu interativo:
 
