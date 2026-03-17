@@ -1,5 +1,6 @@
 
-# Jornada de Lógica de Programação — Lista de Exercícios
+# Hora De Codar: Primeiros Passos
+
 
 Estamos nos primeiros passos da lógica de programação — e isso é excelente!
 
