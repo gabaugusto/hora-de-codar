@@ -1,5 +1,5 @@
 
-# 🚀 Jornada de Lógica de Programação — Lista de Exercícios
+# Jornada de Lógica de Programação — Lista de Exercícios
 
 Estamos nos primeiros passos da lógica de programação — e isso é excelente!
 
