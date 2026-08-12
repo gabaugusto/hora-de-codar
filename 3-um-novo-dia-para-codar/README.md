@@ -7,8 +7,7 @@ Hoje vamos dar os primeiros passos no fascinante mundo das estruturas de dados! 
 Crie um programa onde o usuário possa cadastrar estudantes sem limites, e, em seguida, Se o usuário digitar "PARE" o programa deve exibir a quantidade de estudantes cadastrados e a lista com cada um deles.
 
 ### 2 - Planetas
-Crie uma array de planetas que inclua "Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno"  e, em seguida, peça ao usuário para digitar o nome de um planeta.
-Verifique se o planeta que o usuário informou está na array e informe ao usuário.
+Exiba uma lista de planetas do sistema solar("Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno" e "Plutão") para o usuário. Em seguida, peça ao usuário para digitar o nome de um planeta. Verifique se o planeta que o usuário informou está na lista e informe ao usuário.
 
 ### 3 - Compras
 Vamos criar uma lista de compras.
