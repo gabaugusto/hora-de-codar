@@ -34,13 +34,16 @@ public class Main {
                     pet.verificarStatus();
                     break;
                 case 4:
+                    pet.passarTempo(1);
+                    break;                    
+                case 5:
                     System.out.println("Saindo do Simulador de Animal de Estimação Virtual. Adeus!");
                     return;
                 default:
                     System.out.println("Escolha inválida. Tente novamente.");
             }
 
-            pet.passarTempo(); // Simula o tempo que passa após cada ação
+            pet.passarTempo(1); // Simula o tempo que passa após cada ação
         }
 
         entrada.close();
