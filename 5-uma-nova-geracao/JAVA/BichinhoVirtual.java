@@ -31,6 +31,6 @@ class BichinhoVirtual {
     public void passarTempo(int quantidadeDeDias) {
         nivelDeFome += quantidadeDeDias;
         idade += quantidadeDeDias;
-        System.out.println(this.nome + " está ficando mais velho e mais faminto com o passar do tempo.");
+        System.out.println("Passou-se " + quantidadeDeDias + " dia e " + this.nome + " está ficando mais velho e mais faminto com o passar do tempo.");
     }
 }
