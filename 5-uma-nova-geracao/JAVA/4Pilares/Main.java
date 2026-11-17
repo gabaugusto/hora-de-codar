@@ -1,105 +1,73 @@
+
 import java.util.Scanner;
 
-public class Main {
 
+// ============================================================================
+// RESUMO DOS 4 PILARES:
+//
+// 1. ABSTRAÇÃO: Classe Veiculo abstrata define a "ideia" de um veículo
+//    sem implementar todos os detalhes
+//
+// 2. ENCAPSULAMENTO: Atributos privados protegidos, acessados por métodos
+//    públicos (getters/setters)
+//
+// 3. HERANÇA: Carro, Barco e Aviao herdam de Veiculo, recebendo suas
+//    características e comportamentos
+//
+// 4. POLIMORFISMO: O mesmo método (mover, exibirInformacoes) se comporta
+//    de forma diferente em cada classe
+// ============================================================================
+
+
+// ============================================================================
+// CLASSE PRINCIPAL: Aqui testamos todos os conceitos
+// ============================================================================
+
+public class Main {
     public static void main(String[] args) {
-        
+        System.out.println("=== DEMONSTRAÇÃO DOS 4 PILARES DA POO ===\n");
+
+        // Criando objetos (instâncias) de cada classe
+        Carro meuCarro = new Carro("Toyota", "Corolla", 2023, 4);
+        Barco meuBarco = new Barco("Yamaha", "SR310", 2022, 9.5);
+        Aviao meuAviao = new Aviao("Boeing", "737", 2021, 12500);
+
+        // POLIMORFISMO: Podemos tratar todos como Veiculos
+        // Mesmo sendo tipos diferentes, todos são veículos!
+        Veiculo[] frota = {meuCarro, meuBarco, meuAviao};
+
+        System.out.println(">>> Testando POLIMORFISMO <<<");
+        System.out.println("Movendo todos os veículos da frota:\n");
+
+        // O método mover() se comporta diferente para cada veículo!
+        for (Veiculo veiculo : frota) {
+            veiculo.mover(); // Cada um se move de um jeito
+            veiculo.acelerar(50);
+        }
+
+        // Testando métodos específicos de cada classe
+        System.out.println("\n>>> Testando métodos específicos <<<\n");
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Projeto: 4 pilares de OOP");
-        System.out.println("- Encapsulamento: atributos privados em Bicho");
-        System.out.println("- Heranca: Cachorro e Gato herdam de Bicho");
-        System.out.println("- Abstracao: metodos abstratos em Bicho");
-        System.out.println("- Polimorfismo: mesmo metodo, comportamentos diferentes\n");
+        meuCarro.buzinar();
+        meuCarro.exibirInformacoes();
 
-        System.out.println("Digite o nome do cachorro:");
-        String nomeCachorro = entrada.nextLine();
+        System.out.println();
+        meuBarco.ancorar();
+        meuBarco.exibirInformacoes();
 
-        System.out.println("Digite o nome do gato:");
-        String nomeGato = entrada.nextLine();
+        System.out.println();
+        meuAviao.decolar();
+        meuAviao.exibirInformacoes();
+        meuAviao.pousar();
 
-        Bicho[] bichos = {
-            new Cachorro(nomeCachorro),
-            new Gato(nomeGato)
-        };
+        // ENCAPSULAMENTO em ação: não podemos acessar os atributos diretamente
+        // meuCarro.marca = "Honda"; // ERRO! marca é privado
+        // Precisamos usar os métodos públicos (getters/setters)
+        System.out.println("\n>>> Testando ENCAPSULAMENTO <<<");
+        System.out.println("Marca do carro: " + meuCarro.getMarca());
+        System.out.println("(Não conseguimos mudar a marca diretamente, ela está protegida!)");
 
-        while (true) {
-            Bicho bichoAtual = escolherBicho(entrada, bichos);
-            if (bichoAtual == null) {
-                System.out.println("Escolha invalida de bicho. Tente novamente.\n");
-                continue;
-            }
-
-            System.out.println("\nEscolha uma ação:");
-            System.out.println("1. Alimentar " + bichoAtual.getNome());
-            System.out.println("2. Brincar com " + bichoAtual.getNome());
-            System.out.println("3. Verificar status");
-            System.out.println("4. Usar habilidade especial");
-            System.out.println("5. Demonstrar polimorfismo");
-            System.out.println("6. Sair");
-
-            if (!entrada.hasNextInt()) {
-                entrada.nextLine();
-                System.out.println("Digite um numero valido.\n");
-                continue;
-            }
-            int escolha = entrada.nextInt();
-            entrada.nextLine();
-
-            switch (escolha) {
-                case 1:
-                    bichoAtual.alimentar();
-                    break;
-                case 2:
-                    bichoAtual.brincar();
-                    break;
-                case 3:
-                    bichoAtual.verificarStatus();
-                    break;
-                case 4:
-                    bichoAtual.habilidadeEspecial();
-                    break;
-                case 5:
-                    demonstrarPolimorfismo(bichos);
-                    break;
-                case 6:
-                    System.out.println("Encerrando o projeto didatico. Ate mais!");
-                    entrada.close();
-                    return;
-                default:
-                    System.out.println("Escolha inválida. Tente novamente.");
-            }
-
-            bichoAtual.passarTempo();
-        }
-    }
-
-
-    private static Bicho escolherBicho(Scanner entrada, Bicho[] bichos) {
-        System.out.println("\nEscolha o bicho:");
-        for (int i = 0; i < bichos.length; i++) {
-            System.out.println((i + 1) + ". " + bichos[i].getNome() + " (" + bichos[i].getClass().getSimpleName() + ")");
-        }
-
-        if (!entrada.hasNextInt()) {
-            entrada.nextLine();
-            return null;
-        }
-
-        int indice = entrada.nextInt();
-        entrada.nextLine();
-
-        if (indice < 1 || indice > bichos.length) {
-            return null;
-        }
-        return bichos[indice - 1];
-    }
-
-    private static void demonstrarPolimorfismo(Bicho[] bichos) {
-        System.out.println("\nDemonstracao de polimorfismo:");
-        for (Bicho bicho : bichos) {
-            bicho.interagir();
-            bicho.habilidadeEspecial();
-        }
+        entrada.close();
     }
 }
