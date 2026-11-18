@@ -4,9 +4,19 @@
 
 	<script>
 
+		// EPS 
+		// Saidas
+		// Entrada
+		// Processamento
+		
+
 	    // Aqui criamos uma variavel global. Global significa que o elemento pode ser acessado por qualquer método. Para tornar global, utilizamos a palavra static.
     
 		var saldo = 100.5; // Float (Número com ponto flutuante)
+
+		// Chamar a função inicio
+		inicio();
+
 
 		/*  Função principal. */
 		function inicio() {
@@ -26,7 +36,7 @@
 			}
 		}
 
-		/*  Função principal. */
+		/*  Função para ver o saldo. */
 		function ver_saldo() {
 			alert('Seu saldo atual é: ' + saldo);
 			inicio();
@@ -34,11 +44,12 @@
 
 		/*  Função para receber informado pelo usuário, processar e levar a uma mensagem de sucesso ou a repetição da função */
 		function fazer_deposito() {
+			
 			var deposito = parseFloat(prompt('Qual o valor para depósito?')); 
 			// Not a Number
 			if (isNaN(deposito) || deposito === '') { // A Função isNaN checa se o valor informado é um Não-Número e retorna verdadeiro ou falso.
 				alert('Por favor, informe um número:');
-				fazer_deposito();
+				fazer_deposito(); // Recursividade
 			} else {
 				saldo += deposito;
 				ver_saldo();
@@ -66,15 +77,13 @@
 		function sair() {
 			var confirma = confirm('Você deseja sair?');
 			if (confirma) {
-				window.close();
+				window.close(); // comando para fechar a janela
 			} else {
 				inicio();
 			}
 		}
 
 
-
-		inicio();
 	</script>
 </head>
 
